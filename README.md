@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/ask-web-search-mcp.svg)](https://rubygems.org/gems/ask-web-search-mcp)
 
 A minimal [MCP](https://modelcontextprotocol.io/) (Model Context Protocol) server
-that exposes a `web_search` tool backed by SearXNG. Designed for use with
+that exposes an `ask_web_search` tool backed by SearXNG. Designed for use with
 MCP-compatible clients like **ZCode**, **Claude Code**, **Codex**, and others.
 
 ## Prerequisites
@@ -57,14 +57,16 @@ Add the server to your ZCode user configuration
   "mcp": {
     "servers": {
       "ask-web-search-mcp": {
-        "command": "ask-web-search-mcp"
+        "type": "stdio",
+        "command": "ask-web-search-mcp",
+        "args": []
       }
     }
   }
 }
 ```
 
-After restarting ZCode, the `web_search` tool will be available to the model.
+After restarting ZCode, the `ask_web_search` tool will be available to the model.
 
 ### With Claude Code
 

@@ -7,7 +7,7 @@ require_relative "mcp/version"
 module Ask
   module WebSearch
     module MCP
-      # Start the MCP server over stdio, exposing the WebSearch tool.
+      # Start the MCP server over stdio, exposing the ask_web_search tool.
       #
       #   $ ask-web-search-mcp
       #
@@ -18,15 +18,19 @@ module Ask
       #   "mcp": {
       #     "servers": {
       #       "ask-web-search-mcp": {
+      #         "type": "stdio",
       #         "command": "ask-web-search-mcp",
-      #         "type": "stdio"
+      #         "args": []
       #       }
       #     }
       #   }
       def self.start
+        tool = Ask::Tools::WebSearch.new
+        tool.define_singleton_method(:name) { "ask_web_search" }
+
         Ask::MCP::Server.start_stdio(
           name: "ask-web-search-mcp",
-          tools: [Ask::Tools::WebSearch.new],
+          tools: [tool],
           capabilities: { tools: {} },
           debug: ENV["DEBUG"] == "1"
         )
