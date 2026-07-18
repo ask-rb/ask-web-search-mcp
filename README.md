@@ -47,26 +47,31 @@ ask-web-search-mcp
 The server reads JSON-RPC messages on stdin and writes responses to stdout
 (the standard MCP stdio transport).
 
-### With ZCode
+### With ZCode (Desktop)
 
-Add the server to your ZCode user configuration
-(`~/.zcode/v2/config.json`):
+1. Open **Settings → MCP Servers**
+2. Click **"New MCP Server"**
+3. Fill in the form:
+   - **Scope**: `User` (available in all workspaces)
+   - **Name**: `ask-web-search-mcp`
+   - **Transport**: `stdio`
+   - **Command**: `ask-web-search-mcp`
+   - **Args**: *(leave empty)*
+4. Click **Save**
+
+Or switch to **Full configuration mode** and paste:
 
 ```json
 {
-  "mcp": {
-    "servers": {
-      "ask-web-search-mcp": {
-        "type": "stdio",
-        "command": "ask-web-search-mcp",
-        "args": []
-      }
-    }
+  "ask-web-search-mcp": {
+    "type": "stdio",
+    "command": "ask-web-search-mcp",
+    "args": []
   }
 }
 ```
 
-After restarting ZCode, the `ask_web_search` tool will be available to the model.
+After saving, the `ask_web_search` tool will be available to the model.
 
 ### With Claude Code
 
