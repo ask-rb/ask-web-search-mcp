@@ -2,9 +2,13 @@
 
 [![Gem Version](https://badge.fury.io/rb/ask-web-search-mcp.svg)](https://rubygems.org/gems/ask-web-search-mcp)
 
-A minimal [MCP](https://modelcontextprotocol.io/) (Model Context Protocol) server
-that exposes an `ask_web_search` tool backed by SearXNG. Designed for use with
-MCP-compatible clients like **ZCode**, **Claude Code**, **Codex**, and others.
+A minimal [MCP](https://modelcontextprotocol.io/) (Model Context Protocol)
+server that exposes an `ask_web_search` tool backed by SearXNG. Designed for
+use with MCP-compatible clients like ZCode, Claude Code, Codex, and others.
+
+The tool was renamed from `web_search` to `ask_web_search` in version 0.2.0 to
+avoid collisions with client-side tools. Use `ask_web_search` in your
+configuration and prompts.
 
 ## Prerequisites
 
@@ -15,14 +19,13 @@ is `http://localhost:8888`.
 docker run -d --name searxng -p 8888:8080 searxng/searxng
 ```
 
-Or use the provided `docker-compose.yml` in the [`searxng`](../searxng) directory:
+Or use the provided `docker-compose.yml` in the `searxng` directory of this
+repository:
 
 ```sh
 cd searxng
 docker compose up -d
 ```
-
-You can customise the SearXNG URL via the `SEARXNG_URL` environment variable.
 
 ## Installation
 
@@ -49,7 +52,8 @@ The server reads JSON-RPC messages on stdin and writes responses to stdout
 
 ### With ZCode
 
-Add to your ZCode user configuration (`~/.zcode/v2/config.json` or `~/.zcode/cli/config.json`):
+Add to your ZCode user configuration (`~/.zcode/v2/config.json` or
+`~/.zcode/cli/config.json`):
 
 ```json
 {
@@ -65,8 +69,8 @@ Add to your ZCode user configuration (`~/.zcode/v2/config.json` or `~/.zcode/cli
 }
 ```
 
-After restarting ZCode, the `ask_web_search` tool will be available
-to the model automatically.
+After restarting ZCode, the `ask_web_search` tool will be available to the
+model automatically.
 
 ### With Claude Code
 
@@ -74,15 +78,25 @@ to the model automatically.
 claude mcp add ask-web-search-mcp -- npx -y @anthropic-ai/mcp-serve ask-web-search-mcp
 ```
 
+## Configuration
+
+- `SEARXNG_URL` - the SearXNG endpoint (default: `http://localhost:8888`).
+- `DEBUG=1` - enable verbose logs on stderr.
+
+## Full documentation
+
+The full ask-rb documentation lives at https://ask-rb.github.io/ask-docs.
+[Core: Web Search](https://ask-rb.github.io/ask-docs/core/web-search) covers
+ask-web-search-mcp in depth, including the tool library and troubleshooting.
+API reference: https://ask-rb.github.io/ask-docs/reference/api.
+
 ## Development
 
-```sh
-git clone https://github.com/ask-rb/ask-web-search-mcp
-cd ask-web-search-mcp
-bin/setup
+```
+bundle install
 bundle exec rake test
 ```
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT
