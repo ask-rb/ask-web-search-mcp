@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ask-web-search-mcp (0.3.0)
+    ask-web-search-mcp (0.3.1)
       ask-mcp (>= 0.4.3)
       ask-web-search (>= 0.2)
 
@@ -46,7 +46,7 @@ CHECKSUMS
   ask-schema (0.1.1) sha256=1be1c107c2f7cdacde9cf8d4dfc004e586f652c2b979e1829fab748f66ca98bd
   ask-tools (0.2.4) sha256=c7f6fbcb99ed9e8201316300c4d6295f4e2df1dca5cec1d10de4c3bb2b2aa7a7
   ask-web-search (0.2.3) sha256=400ce5d4bdc78846bc1e765fc40bcbf1af9aa648fc695d3649e6ee3a558a4a43
-  ask-web-search-mcp (0.3.0)
+  ask-web-search-mcp (0.3.1)
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
   bundler (4.0.12) sha256=7f8b757d28dfb636e7b24fba2344ac6dd13b5b24f4b46d62573d483f211825ac

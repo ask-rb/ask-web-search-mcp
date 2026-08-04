@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.1] - 2026-08-04
+
+### Fixed
+
+- Corrected publish of the 0.3.0 changeset (0.3.0 was yanked — it shipped a
+  stale build missing the `tool` extraction and serverInfo version
+  passthrough). 0.3.1 is the same changeset built correctly.
+
 ## [0.3.0] - 2026-08-04
 
 ### Changed
