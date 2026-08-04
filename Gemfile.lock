@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     ask-web-search-mcp (0.3.0)
-      ask-mcp (>= 0.4)
+      ask-mcp (>= 0.4.3)
       ask-web-search (>= 0.2)
 
 GEM
@@ -10,7 +10,7 @@ GEM
   specs:
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
-    ask-mcp (0.4.2)
+    ask-mcp (0.4.3)
       base64
       httpx (~> 1.4)
       json-schema (~> 5.0)
@@ -42,7 +42,7 @@ DEPENDENCIES
 
 CHECKSUMS
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
-  ask-mcp (0.4.2) sha256=e457401d613ab6b9e957f9fcdd51bab5ac4d5a4e8fa0d179d9349bda1c597951
+  ask-mcp (0.4.3) sha256=2081937f47496383bd7de50c31e13271a4766d3c4265448d03fe4c81d927e316
   ask-schema (0.1.1) sha256=1be1c107c2f7cdacde9cf8d4dfc004e586f652c2b979e1829fab748f66ca98bd
   ask-tools (0.2.4) sha256=c7f6fbcb99ed9e8201316300c4d6295f4e2df1dca5cec1d10de4c3bb2b2aa7a7
   ask-web-search (0.2.3) sha256=400ce5d4bdc78846bc1e765fc40bcbf1af9aa648fc695d3649e6ee3a558a4a43

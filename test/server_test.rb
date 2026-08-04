@@ -84,4 +84,25 @@ class ServerTest < Minitest::Test
     text = result.is_a?(Array) ? result.first[:text] : result.dig(:content, 0, :text)
     assert_match(/Tool not found/, text)
   end
+
+  def test_calls_tool_when_searxng_is_unreachable
+    searxng = FakeSearxng.new(results: [])
+    transport = Ask::MCP::Transport::Stdio.new(
+      "ruby", [@script],
+      env: {
+        "BUNDLE_GEMFILE" => File.expand_path("../Gemfile", __dir__),
+        "SEARXNG_URL" => searxng.url
+      }
+    )
+    @client = Ask::MCP::Client.new(transport, timeout: 5)
+    @client.start
+    searxng.stop # SearXNG unreachable — the tool must return a clean error, not crash
+
+    result = @client.call_tool("ask_web_search", { query: "ruby" })
+    text = result.is_a?(Array) ? result.first[:text] : result.dig(:content, 0, :text)
+    assert text, "expected an error message, got nil"
+    assert_match(/WebSearch raised Errno::ECONNREFUSED/, text)
+  ensure
+    searxng&.stop
+  end
 end

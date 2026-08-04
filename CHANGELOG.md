@@ -19,7 +19,13 @@
 - Functional test suite (`test/server_test.rb`) driving the server end-to-end
   with `Ask::MCP::Client` over a real stdio subprocess: stateless
   negotiation, tool listing, tool calls against a stubbed SearXNG (in-process
-  `FakeSearxng`), no-results handling, and unknown-tool errors.
+  `FakeSearxng`), no-results handling, unknown-tool errors, and a
+  SearXNG-unreachable error path.
+- `Ask::WebSearch::MCP.tool` — extracted, testable accessor for the
+  `ask_web_search` tool instance, with unit tests covering the MCP tool
+  contract (name, description, params schema).
+- The server now reports its own gem version in the MCP `serverInfo`
+  handshake (via `ask-mcp >= 0.4.3`), instead of ask-mcp's version.
 
 ## [0.2.0] - 2026-07-18
 

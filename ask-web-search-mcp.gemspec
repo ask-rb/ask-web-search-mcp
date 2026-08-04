@@ -29,11 +29,11 @@ Gem::Specification.new do |spec|
   spec.executables = ["ask-web-search-mcp"]
   spec.require_paths = ["lib"]
 
-  # ask-mcp >= 0.4: the 0.4 line adds the stateless 2026-07-28 protocol
+  # ask-mcp >= 0.4.3: the 0.4 line adds the stateless 2026-07-28 protocol
   # (server/discover negotiation, per-request _meta, MRTR) plus server-side
-  # resources/prompts serving. Older ask-mcp versions only speak the legacy
-  # initialize handshake.
-  spec.add_dependency "ask-mcp", ">= 0.4"
+  # resources/prompts serving; 0.4.3 adds the serverInfo version passthrough
+  # so this server can advertise its own gem version.
+  spec.add_dependency "ask-mcp", ">= 0.4.3"
   spec.add_dependency "ask-web-search", ">= 0.2"
 
   spec.add_development_dependency "minitest", "~> 5.25"
