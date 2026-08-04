@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    ask-web-search-mcp (0.2.0)
-      ask-mcp (>= 0.1)
+    ask-web-search-mcp (0.3.0)
+      ask-mcp (>= 0.4)
       ask-web-search (>= 0.2)
 
 GEM
@@ -10,7 +10,8 @@ GEM
   specs:
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
-    ask-mcp (0.4.0)
+    ask-mcp (0.4.2)
+      base64
       httpx (~> 1.4)
       json-schema (~> 5.0)
     ask-schema (0.1.1)
@@ -18,9 +19,10 @@ GEM
       ask-schema (>= 0.1)
     ask-web-search (0.2.3)
       ask-tools (>= 0.1)
+    base64 (0.3.0)
     bigdecimal (3.3.1)
     http-2 (1.2.1)
-    httpx (1.8.0)
+    httpx (1.8.1)
       http-2 (>= 1.2.0)
     json-schema (5.2.2)
       addressable (~> 2.8)
@@ -40,15 +42,16 @@ DEPENDENCIES
 
 CHECKSUMS
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
-  ask-mcp (0.4.0) sha256=3578ee0cbe19e65f20c206710f7c57af69b362c9647dc51acee111ed18a7b9dc
+  ask-mcp (0.4.2) sha256=e457401d613ab6b9e957f9fcdd51bab5ac4d5a4e8fa0d179d9349bda1c597951
   ask-schema (0.1.1) sha256=1be1c107c2f7cdacde9cf8d4dfc004e586f652c2b979e1829fab748f66ca98bd
   ask-tools (0.2.4) sha256=c7f6fbcb99ed9e8201316300c4d6295f4e2df1dca5cec1d10de4c3bb2b2aa7a7
   ask-web-search (0.2.3) sha256=400ce5d4bdc78846bc1e765fc40bcbf1af9aa648fc695d3649e6ee3a558a4a43
-  ask-web-search-mcp (0.2.0)
+  ask-web-search-mcp (0.3.0)
+  base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
   bundler (4.0.12) sha256=7f8b757d28dfb636e7b24fba2344ac6dd13b5b24f4b46d62573d483f211825ac
   http-2 (1.2.1) sha256=d290f3b7daa70b8be8cd2260306c01243c73ec4df9d598feadaf0ed26e00b9b7
-  httpx (1.8.0) sha256=10b300875be99cbc3497397278cf99632262567886f3582ee25ce492bdadbe2a
+  httpx (1.8.1) sha256=8d9e003019b2c1a8f582daac9371ec9da96182c23064e211386eaad70b6e12e5
   json-schema (5.2.2) sha256=60beae0ed79ca9c552854c9ebfd44f50f77bd0c3144526d46afec384509940d5
   minitest (5.27.0) sha256=2d3b17f8a36fe7801c1adcffdbc38233b938eb0b4966e97a6739055a45fa77d5
   public_suffix (7.0.5) sha256=1a8bb08f1bbea19228d3bed6e5ed908d1cb4f7c2726d18bd9cadf60bc676f623

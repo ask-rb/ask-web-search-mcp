@@ -6,6 +6,11 @@ A minimal [MCP](https://modelcontextprotocol.io/) (Model Context Protocol)
 server that exposes an `ask_web_search` tool backed by SearXNG. Designed for
 use with MCP-compatible clients like ZCode, Claude Code, Codex, and others.
 
+The server speaks MCP **dual-mode** (requires `ask-mcp >= 0.4`): it negotiates
+the stateless `2026-07-28` revision via `server/discover` (no `initialize`
+handshake, per-request `_meta`, `resultType`) when the client supports it, and
+falls back to the legacy `initialize` handshake for older clients.
+
 The tool was renamed from `web_search` to `ask_web_search` in version 0.2.0 to
 avoid collisions with client-side tools. Use `ask_web_search` in your
 configuration and prompts.
@@ -96,6 +101,11 @@ API reference: https://ask-rb.github.io/ask-docs/reference/api.
 bundle install
 bundle exec rake test
 ```
+
+`ask-mcp` resolves from rubygems (`>= 0.4` — the 0.4 line carries the
+stateless 2026-07-28 protocol support). The suite drives the server
+end-to-end with `Ask::MCP::Client` over a real stdio subprocess, stubbing
+SearXNG in-process (no network required).
 
 ## License
 

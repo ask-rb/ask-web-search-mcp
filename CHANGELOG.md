@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.3.0] - 2026-08-04
+
+### Changed
+
+- **Stateless protocol support (2026-07-28)** — the server now negotiates the
+  stateless MCP revision via `server/discover` (no `initialize` handshake,
+  per-request `_meta`, `resultType`) when the client supports it, while
+  remaining backward compatible with legacy `initialize`-handshake clients.
+  Requires `ask-mcp >= 0.4` — the 0.4 line also brings server-side
+  resources/prompts and the Streamable HTTP rework.
+- Development resolves `ask-mcp` from rubygems via the `>= 0.4` floor — no
+  local path overrides; the server always exercises the published protocol
+  support.
+
+### Added
+
+- Functional test suite (`test/server_test.rb`) driving the server end-to-end
+  with `Ask::MCP::Client` over a real stdio subprocess: stateless
+  negotiation, tool listing, tool calls against a stubbed SearXNG (in-process
+  `FakeSearxng`), no-results handling, and unknown-tool errors.
+
 ## [0.2.0] - 2026-07-18
 
 ### Changed
