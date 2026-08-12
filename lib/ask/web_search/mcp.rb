@@ -2,18 +2,18 @@
 
 require "ask/mcp"
 require "ask/web_search"
+require_relative "mcp/tool"
 require_relative "mcp/version"
 
 module Ask
   module WebSearch
     module MCP
-      # Builds the tool exposed over MCP: Ask::Tools::WebSearch renamed to
-      # "ask_web_search" to avoid collisions with client-side tools of the
-      # same name.
+      # Builds the tool exposed over MCP. The tool framing lives here —
+      # ask-web-search is a library (Ask::WebSearch.search); this server
+      # owns the agent-facing shell, named "ask_web_search" to avoid
+      # collisions with client-side tools of the same name.
       def self.tool
-        tool = Ask::Tools::WebSearch.new
-        tool.define_singleton_method(:name) { "ask_web_search" }
-        tool
+        Tool.new
       end
 
       # Start the MCP server over stdio, exposing the ask_web_search tool.

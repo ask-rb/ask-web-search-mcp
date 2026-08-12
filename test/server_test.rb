@@ -101,7 +101,7 @@ class ServerTest < Minitest::Test
     result = @client.call_tool("ask_web_search", { query: "ruby" })
     text = result.is_a?(Array) ? result.first[:text] : result.dig(:content, 0, :text)
     assert text, "expected an error message, got nil"
-    assert_match(/WebSearch raised Errno::ECONNREFUSED/, text)
+    assert_match(/Error: Errno::ECONNREFUSED/, text)
   ensure
     searxng&.stop
   end

@@ -10,7 +10,7 @@ class MCPToolTest < Minitest::Test
 
   def test_exposes_the_tool_under_the_ask_web_search_name
     assert_equal "ask_web_search", @tool.name
-    assert_kind_of Ask::Tools::WebSearch, @tool
+    assert_kind_of Ask::WebSearch::MCP::Tool, @tool
   end
 
   def test_satisfies_the_duck_typed_mcp_tool_contract

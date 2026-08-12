@@ -10,10 +10,11 @@ Gem::Specification.new do |spec|
 
   spec.summary = "MCP server for web search via SearXNG"
   spec.description = <<~DESC
-    A minimal MCP (Model Context Protocol) server that exposes Ask::Tools::WebSearch
+    A minimal MCP (Model Context Protocol) server that exposes ask_web_search
     as a callable tool over stdio. Designed for use with clients that support MCP
     (ZCode, Claude Code, etc.), it queries a local SearXNG instance and returns
-    formatted search results suitable for LLM consumption.
+    formatted search results suitable for LLM consumption. The tool shell (name,
+    schema, call) lives here, wrapping the Ask::WebSearch library.
   DESC
 
   spec.homepage = "https://github.com/ask-rb/ask-web-search-mcp"
@@ -34,7 +35,11 @@ Gem::Specification.new do |spec|
   # resources/prompts serving; 0.4.3 adds the serverInfo version passthrough
   # so this server can advertise its own gem version.
   spec.add_dependency "ask-mcp", ">= 0.4.3"
-  spec.add_dependency "ask-web-search", ">= 0.2"
+  # 0.3.0: the module-level library API (Ask::WebSearch.search); this
+  # server owns the ask_web_search tool shell (duck-typed for the MCP
+  # adapter), while the library's native Ask::Tools tool, when wanted,
+  # is an optional integration in ask-web-search itself.
+  spec.add_dependency "ask-web-search", ">= 0.3.0"
 
   spec.add_development_dependency "minitest", "~> 5.25"
   spec.add_development_dependency "rake", "~> 13.0"

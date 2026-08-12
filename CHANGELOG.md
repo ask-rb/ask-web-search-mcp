@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.4.0] - 2026-08-12
+
+### Changed
+
+- **The server owns its tool shell.** `ask_web_search` is now a
+  duck-typed tool (`Ask::WebSearch::MCP::Tool` — `name` /
+  `description` / `params_schema` / `call`) wrapping the library entry
+  `Ask::WebSearch.search`, instead of a renamed `Ask::Tools::WebSearch`.
+  The MCP adapter's contract is duck-typed by design, so the ask-tools /
+  ask-core / ask-schema dependency chain is gone from the server
+  process entirely. `ask-web-search` floor raised to `>= 0.3.0` (the
+  module-level API). The native agent tool remains available in
+  ask-web-search as an optional integration for non-MCP consumers.
+
 ## [0.3.1] - 2026-08-04
 
 ### Fixed
