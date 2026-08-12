@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   # (server/discover negotiation, per-request _meta, MRTR) plus server-side
   # resources/prompts serving; 0.4.3 adds the serverInfo version passthrough
   # so this server can advertise its own gem version.
-  spec.add_dependency "ask-mcp", ">= 0.4.3"
+  spec.add_dependency "ask-mcp", ">= 0.4.5"
   # 0.3.0: the module-level library API (Ask::WebSearch.search); this
   # server owns the ask_web_search tool shell (duck-typed for the MCP
   # adapter), while the library's native Ask::Tools tool, when wanted,
