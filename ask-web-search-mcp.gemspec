@@ -39,7 +39,9 @@ Gem::Specification.new do |spec|
   # server owns the ask_web_search tool shell (duck-typed for the MCP
   # adapter), while the library's native Ask::Tools tool, when wanted,
   # is an optional integration in ask-web-search itself.
-  spec.add_dependency "ask-web-search", ">= 0.3.0"
+  # 0.4.0: retry with exponential backoff (3 attempts, configurable via
+  # WebSearch.max_retries; set to 0 to disable).
+  spec.add_dependency "ask-web-search", ">= 0.4.0"
 
   spec.add_development_dependency "minitest", "~> 5.25"
   spec.add_development_dependency "rake", "~> 13.0"
