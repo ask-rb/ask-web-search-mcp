@@ -41,7 +41,7 @@ Gem::Specification.new do |spec|
   # is an optional integration in ask-web-search itself.
   # 0.4.0: retry with exponential backoff (3 attempts, configurable via
   # WebSearch.max_retries; set to 0 to disable).
-  spec.add_dependency "ask-web-search", ">= 0.4.0"
+  spec.add_dependency "ask-web-search", ">= 0.5.0"
 
   spec.add_development_dependency "minitest", "~> 5.25"
   spec.add_development_dependency "rake", "~> 13.0"
