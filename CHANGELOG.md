@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.5] — 2026-09-09
+
+### Changed
+
+- Depends on `ask-web-search >= 0.5.0` for engine failure diagnostics
+  (`AllEnginesFailedError` with per-engine reasons) and retry with
+  exponential backoff.
+
 ## [0.4.0] - 2026-08-12
 
 ### Changed
