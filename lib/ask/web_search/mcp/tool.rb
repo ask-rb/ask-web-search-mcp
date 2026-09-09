@@ -30,13 +30,16 @@ module Ask
         end
 
         # Returns the formatted results (a String is a success for the
-        # adapter) or raises on connection/HTTP failures — the adapter
-        # surfaces them as classed errors.
+        # adapter). On failure, returns a formatted error string so the
+        # agent gets the library's diagnostics instead of a generic
+        # transport error.
         def call(args)
           query = args["query"].to_s
           raise ArgumentError, "missing required parameter: query" if query.empty?
 
           Ask::WebSearch.search(query)
+        rescue StandardError => e
+          "Error: #{e.class.name}: #{e.message}"
         end
       end
     end
