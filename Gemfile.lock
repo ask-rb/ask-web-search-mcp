@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    ask-web-search-mcp (0.4.5)
-      ask-mcp (>= 0.4.6)
+    ask-web-search-mcp (0.4.6)
+      ask-mcp (>= 0.5.0)
       ask-web-search (>= 0.5.0)
 
 GEM
@@ -10,15 +10,15 @@ GEM
   specs:
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
-    ask-mcp (0.4.6)
+    ask-mcp (0.5.0)
       base64
       httpx (~> 1.4)
       json-schema (~> 5.0)
     ask-web-search (0.5.0)
     base64 (0.3.0)
     bigdecimal (3.3.1)
-    http-2 (1.2.1)
-    httpx (1.8.1)
+    http-2 (1.2.3)
+    httpx (1.8.4)
       http-2 (>= 1.2.0)
     json-schema (5.2.2)
       addressable (~> 2.8)
@@ -38,14 +38,14 @@ DEPENDENCIES
 
 CHECKSUMS
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
-  ask-mcp (0.4.6) sha256=0b101a6bc052006e478fdc4c29a71474865481f25eba524c6894986ab8254a6a
+  ask-mcp (0.5.0) sha256=f7b34987aaa513e7e8015f29abaf4e9e932ca8f7cda12e88a60f4a9914e780d7
   ask-web-search (0.5.0) sha256=a8dcf580e8521ff5d7e1a1a36fc90127febcc27ed4f170d18c8edad42b1fabd8
-  ask-web-search-mcp (0.4.5)
+  ask-web-search-mcp (0.4.6)
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
   bundler (4.0.12) sha256=7f8b757d28dfb636e7b24fba2344ac6dd13b5b24f4b46d62573d483f211825ac
-  http-2 (1.2.1) sha256=d290f3b7daa70b8be8cd2260306c01243c73ec4df9d598feadaf0ed26e00b9b7
-  httpx (1.8.1) sha256=8d9e003019b2c1a8f582daac9371ec9da96182c23064e211386eaad70b6e12e5
+  http-2 (1.2.3) sha256=f4e3a7000e9a8ab97595f09eac44c6ec10a2aa438360758124df0ca5bcb280d4
+  httpx (1.8.4) sha256=1782ecde81eb4e961ad8735ec74a6fec8e60efeaa4592c6b2f55d72e19aaeca8
   json-schema (5.2.2) sha256=60beae0ed79ca9c552854c9ebfd44f50f77bd0c3144526d46afec384509940d5
   minitest (5.27.0) sha256=2d3b17f8a36fe7801c1adcffdbc38233b938eb0b4966e97a6739055a45fa77d5
   public_suffix (7.0.5) sha256=1a8bb08f1bbea19228d3bed6e5ed908d1cb4f7c2726d18bd9cadf60bc676f623
