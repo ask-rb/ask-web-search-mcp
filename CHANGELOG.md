@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.5.0] — 2026-09-19
+
+### Added
+
+- **Optional `time_range` and `categories` parameters** on `ask_web_search`
+  — freshness window (`day` / `week` / `month` / `year`) and vertical
+  (`general` / `news` / `science`) — forwarded to the library. A bad value
+  surfaces as tool text (`Error: ArgumentError: invalid time_range ...
+  use one of: day, week, month, year`) so agents can self-correct.
+
+### Changed
+
+- Depends on `ask-web-search >= 0.6.0` (the library side of the same
+  feature; see its CHANGELOG for the freshness-window failure UX and the
+  SearXNG engine caveat).
+
 ## [0.4.5] — 2026-09-09
 
 ### Changed

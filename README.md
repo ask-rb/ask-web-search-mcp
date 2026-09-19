@@ -88,6 +88,20 @@ claude mcp add ask-web-search-mcp -- npx -y @anthropic-ai/mcp-serve ask-web-sear
 - `SEARXNG_URL` - the SearXNG endpoint (default: `http://localhost:8888`).
 - `DEBUG=1` - enable verbose logs on stderr.
 
+## Tool parameters
+
+`ask_web_search` takes a required `query` plus two optional parameters,
+forwarded to the library:
+
+- `time_range` — freshness window: `day`, `week`, `month`, or `year`.
+  Use for recency-sensitive queries. A windowed search that comes back
+  cleanly empty reports the window ("No results found within the day
+  freshness window…") so the model can retry broader; see the
+  ask-web-search README for the current SearXNG engine caveat.
+- `categories` — vertical: `general` (default), `news`, or `science`
+  (research papers). The SearXNG instance must have vertical engines
+  enabled — the `searxng/` compose config in the ask-rb repository does.
+
 ## Full documentation
 
 The full ask-rb documentation lives at https://ask-rb.github.io/ask-docs.
