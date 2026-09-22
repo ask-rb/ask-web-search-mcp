@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    ask-web-search-mcp (0.5.1)
+    ask-web-search-mcp (0.5.3)
       ask-mcp (>= 0.6.1)
-      ask-web-search (>= 0.6.0)
+      ask-web-search (>= 0.6.1)
 
 GEM
   remote: https://rubygems.org/
@@ -14,7 +14,7 @@ GEM
       base64
       httpx (~> 1.4)
       json-schema (~> 5.0)
-    ask-web-search (0.6.0)
+    ask-web-search (0.6.1)
     base64 (0.3.0)
     bigdecimal (3.3.1)
     http-2 (1.2.3)
@@ -39,8 +39,8 @@ DEPENDENCIES
 CHECKSUMS
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
   ask-mcp (0.6.1) sha256=dbecc249b99c2daea6957e692041a467d70c81028c96fbdf40b9ece9a59e7caf
-  ask-web-search (0.6.0) sha256=cc735b64b2f6b53599d0cec821dba5c26005587e4d26f93713b26be353cc4084
-  ask-web-search-mcp (0.5.1)
+  ask-web-search (0.6.1) sha256=db76bd1ced368b535155b7112284ebf5071fce4999b2e279d7467f0e75779ca3
+  ask-web-search-mcp (0.5.3)
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
   bundler (4.0.12) sha256=7f8b757d28dfb636e7b24fba2344ac6dd13b5b24f4b46d62573d483f211825ac
